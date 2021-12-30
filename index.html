@@ -127,7 +127,7 @@
         </nav>
       </div>
     </header>
-    <section class="project__carousel">
+    <section class="project__carousel" id="top">
       <div
         id="carouselExampleFade"
         class="carousel slide carousel-fade"
@@ -1000,7 +1000,11 @@
           </p>
         </div>
     </footer>
-
+    <button class="scroll-to-top" id="scrollTopBtn">
+      <a class="scroll-to-top__link stretched-link" href="#top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+   </button>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -1034,7 +1038,7 @@
          function transparentHeader() {
              headerNavbarCollapse.classList.remove('show');
              headerNavbarToggler.classList.add('collapsed');
-             headerNavbarToggler.setAttribute("aria-expanded") = false;
+            
 
              
              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -1074,6 +1078,19 @@
               
             }
          
+    </script>
+
+      <!-- ---- start Scroll to Top Btn  ----  -->  
+      <script>
+        const mybutton = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll' , openBtnToTop);
+        function openBtnToTop() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
     </script>
   </body>
 </html>
