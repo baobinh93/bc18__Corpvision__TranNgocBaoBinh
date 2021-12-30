@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
+    
     <header id="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg" >
@@ -127,7 +128,18 @@
         
         </nav>
       </div>
+      <div class="header__modal">
+        <div class="container">
+
+          <button class="header__modal--close">
+            <i class="header__modal--icon fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
     </header>
+    
+   
+
     <section class="project__carousel" id="top">
       <div
         id="carouselExampleFade"
@@ -1080,18 +1092,34 @@
             }
          
     </script>
+    <!-- ---- header modal ---- -->
+    <script>
+      const modalEl = document.querySelector('.header__modal');
+      const modalOpenBtns = document.querySelectorAll('.header__search--btn');
+      const modalCloseBtn = document.querySelector('.header__modal--close');
 
-      <!-- ---- start Scroll to Top Btn  ----  -->  
-      <script>
-        const mybutton = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll' , openBtnToTop);
-        function openBtnToTop() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
+      modalCloseBtn.onclick = function(){
+        modalEl.classList.remove('show');
+        modalOpenBtns.forEach(btn =>  btn.classList.remove('fadeOut') );
+      }
+      
+      modalOpenBtns.forEach(btn => btn.onclick = function(){
+        modalEl.classList.add('show');
+        btn.classList.add('fadeOut');
+      })
+    </script>
+  
+    <!-- ---- start Scroll to Top Btn  ----  -->  
+    <script>
+      const mybutton = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll' , openBtnToTop);
+      function openBtnToTop() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+          } else {
+              mybutton.style.display = "none";
+          }
+      }
     </script>
   </body>
 </html>

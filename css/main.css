@@ -20,6 +20,7 @@ html {
 }
 body {
   height: 2000px;
+  position: relative;
 }
 /* --- start Header --- */
 header {
@@ -85,6 +86,25 @@ header li.nav-item.dropdown.show .nav-link {
   border-radius: 50%;
   background-color: var(--color-green);
   margin-right: 16px;
+  transition: transform 0.5s ease-in-out, opacity 0.3s linear;
+  position: relative;
+  transform: scale(1);
+  opacity: 1;
+}
+.header__search--btn.fadeOut {
+  transform: scale(100);
+  opacity: 0;
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+  }
 }
 .header__search--btn i {
   font-size: 0.938rem;
@@ -157,6 +177,59 @@ button[aria-expanded="true"] ~ .navbar-collapse .dropdown-menu {
   transform: translateX(0);
   text-align: center;
 }
+
+.header__modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1081px;
+  background-color: var(--color-green);
+  z-index: 999;
+  display: none;
+}
+.header__modal.show {
+  display: block;
+  animation: modalShowUp 0.3s linear;
+}
+@keyframes modalShowUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header__modal .container {
+  position: relative;
+}
+.header__modal--close {
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  font-size: 70px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header__modal--icon {
+  color: var(--color-white);
+}
+.header__modal.show .header__modal--icon {
+  transform: rotate(0deg);
+  animation: rotate-45 0.4s linear;
+}
+@keyframes rotate-45 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 /* --- end Header --- */
 
 /* --- start Carousel ---- */
