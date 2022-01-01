@@ -1,15 +1,4 @@
 :root {
-  --color-white: #ffffff;
-  --color-green: #009f4d;
-  --color-grey: #f7f7f7;
-
-  --text-heading: #3f3a64;
-  --text-bold: #7e7d7d;
-  --text-thin: #666666;
-  --text-white: #ffffff;
-
-  --border-color: transparent;
-  --border-color-thin: #eee;
 }
 .font--jost {
   font-family: "Jost", sans-serif !important;
@@ -25,6 +14,19 @@ html {
 body {
   height: 2000px;
   position: relative;
+}
+#root {
+  --color-white: #ffffff;
+  --color-green: #009f4d;
+  --color-grey: #f7f7f7;
+
+  --text-heading: #3f3a64;
+  --text-bold: #7e7d7d;
+  --text-thin: #666666;
+  --text-white: #ffffff;
+
+  --border-color: transparent;
+  --border-color-thin: #eee;
 }
 #root.night-mode {
   --color-white: #151421;
@@ -129,8 +131,9 @@ header li.nav-item.dropdown.show .nav-link {
 header .dropdown-menu {
   padding: 16px 0;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color-thin);
   transform: translateX(-25%);
+  background-color: var(--color-white);
 }
 header .dropdown-menu::after {
   content: "";
@@ -154,6 +157,9 @@ header .dropdown-item {
 }
 header .dropdown-item:hover {
   opacity: 1;
+}
+.night-mode header .dropdown-item:hover {
+  color: var(--text-white);
   background-color: var(--color-white);
 }
 header .navbar-toggler {
@@ -496,6 +502,7 @@ button[aria-expanded="true"] ~ .navbar-collapse .dropdown-menu {
 .project__services--card .card-body {
   position: relative;
   padding-top: 0;
+  background-color: var(--color-white);
 }
 .project__services--card h5 {
   display: inline-block;
@@ -510,6 +517,7 @@ button[aria-expanded="true"] ~ .navbar-collapse .dropdown-menu {
   transform: translateY(-25px);
   margin-bottom: 0;
   transition: color 0.2s linear;
+  border: 1px solid var(--border-color);
 }
 .project__services--card:hover h5 {
   color: var(--color-green);
