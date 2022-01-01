@@ -41,7 +41,6 @@
   />
     <!-- --- my css --- -->
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -57,12 +56,12 @@
             <div class="header__logo--sub ">Vision to your Future</div>
           </a>
           
-          <button
+          <label for="searchTyping"
           class="header__search--btn btn my-2 d-block d-lg-none ml-auto"
-          type="button"
+          
           >
             <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          </label>
           <button class="header__mode--btn btn my-2 d-block d-lg-none " type="button">
             <i class="fa-regular fa-moon"></i>
           </button>
@@ -114,12 +113,12 @@
               </li>
             </ul>
             <form class="form-inline ">
-              <button
+              <label for="searchTyping"
                 class="header__search--btn btn my-2 my-sm-0 d-none d-lg-block"
-                type="button"
+               
               >
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            </label>
             </form>
             <button class="header__mode--btn btn my-2 my-sm-0 d-none d-lg-block" type="button">
               <i class="fa-regular fa-moon"></i>
@@ -130,10 +129,11 @@
       </div>
       <div class="header__modal">
         <div class="container">
-
           <button class="header__modal--close">
             <i class="header__modal--icon fa-solid fa-xmark"></i>
           </button>
+          <input id="searchTyping" class="header__modal--input" type="text"  placeholder="Start Typing">
+         
         </div>
       </div>
     </header>
@@ -1081,14 +1081,9 @@
             function concac(){
               if (document.documentElement.scrollTop > 20){
                 headerNavbarCollapse.classList.add("bg--white")
-                  console.log("trang")
-               
               } else  {
                 headerNavbarCollapse.classList.remove("bg--white")
-                 console.log("trong suot")
-                
               }
-              
             }
          
     </script>
