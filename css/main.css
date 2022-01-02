@@ -959,6 +959,7 @@ footer {
   border-radius: 50%;
   border: none;
   background-color: var(--color-green);
+  z-index: 1000;
 }
 .scroll-to-top__link {
   color: var(--text-white);
